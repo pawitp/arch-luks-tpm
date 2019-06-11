@@ -1,7 +1,7 @@
 #!/usr/bin/ash
 
 run_hook() {
-    modprobe -a -q dm-crypt >/dev/null 2>&1
+    modprobe -a -q tpm_crb >/dev/null 2>&1
     tpm2_unseal -H 0x81000000 -L sha1:0,2,4,7 -o /crypto_keyfile.bin
 }
 
